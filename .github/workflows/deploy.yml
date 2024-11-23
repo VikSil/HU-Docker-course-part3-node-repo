@@ -40,5 +40,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
+          context: .
+          file: ./Dockerfile
           push: true
-          tags: viksil/hu-docker-part3-ex3.1:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/hu-docker-part3-ex3.1:latest
